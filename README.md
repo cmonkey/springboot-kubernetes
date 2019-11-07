@@ -1,1 +1,18 @@
 # springboot-kubernetes
+
+将springboot 项目部署到kubernetes 上
+
+宿主机使用工作用的ArchLinux 系统，Vbox 在平时使用中，已经默认安装
+
+需要额外安装的是minkube, kubectl 
+
+在AUR中有community/minikube , aur/minikube-bin-aliyun 
+
+使用community/minkube 会在启动后，安装gcr源上的包，抛出链接异常
+
+在不无VPN, 不想慢慢看如何配置proxy 的情况下，换成安装minikube-bin-aliyun 
+
+minikube 在使用过程中会在~/下面创建.minikube 目录，如果不是新安装，在以前使用过，并抛出过错误
+
+建议直接讲改目录删除，重新执行minkube start 创建virtual machine 并自动部署需要的kubernetes 服务
+

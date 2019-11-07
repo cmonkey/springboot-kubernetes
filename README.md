@@ -26,3 +26,7 @@ minikube 在使用过程中会在~/下面创建.minikube 目录，如果不是�
 
 然后再执行mvn dockerfile:build 就会直接将image build 到minikube 中的docker images 
 
+
+# Step
+
+[step](steps.md)

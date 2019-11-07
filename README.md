@@ -18,3 +18,11 @@ minikube 在使用过程中会在~/下面创建.minikube 目录，如果不是�
 
 在minkube start 不出现问题的情况下，就可以执行minkube dashborad 打开控制面板，查看服务状态
 
+在宿主机器上直接通过mvn dockerfile:build 的方式，会讲docker image 直接写入到宿主机的docker images 中
+
+然后通过kubectl 发布引用程序会因为找不到容器镜像而失败
+
+所以在mvn dockerfile:build 之前需要通过eval $(minikube docker-env) ，　通过evel $(minikube docker-env) 切换为minikube 中的docker 
+
+然后再执行mvn dockerfile:build 就会直接讲image push 到minikube 中的docker images 
+

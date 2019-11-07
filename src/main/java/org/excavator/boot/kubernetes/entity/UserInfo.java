@@ -14,19 +14,40 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.excavator.boot.kubernetes;
+package org.excavator.boot.kubernetes.entity;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+public class UserInfo {
+    private long   id;
+    private String name;
+    private String mobilePhone;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-public class KubernetesApplicationTests {
-
-    @Test
-    public void contextLoads() {
+    public UserInfo(long id, String name, String mobilePhone) {
+        this.id = id;
+        this.name = name;
+        this.mobilePhone = mobilePhone;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getMobilePhone() {
+        return mobilePhone;
+    }
+
+    public void setMobilePhone(String mobilePhone) {
+        this.mobilePhone = mobilePhone;
+    }
 }

@@ -7,7 +7,7 @@ VOLUME /opt
 ARG JAR_FILE
 ADD target/${JAR_FILE} /opt/restful-api.jar
 
-EXPOSE 8010
+EXPOSE 8080
 
 RUN bash -c 'touch /opt/restful-api.jar'
 

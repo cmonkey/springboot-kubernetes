@@ -16,6 +16,8 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<dockerfile.version>1.4.12</dockerfile.version>
+        <docker.push.address>push.com</docker.push.address>
 	</properties>
 
 	<dependencies>
@@ -47,6 +49,20 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>dockerfile-maven-plugin</artifactId>
+                <version>${dockerfile.version}</version>
+                <configuration>
+                    <repository>${docker.push.address}/${project.artifactId}</repository>
+                    <tag>${project.version}.${git-revision}</tag>
+                    <buildArgs>
+                    <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+                    </buildArgs>
+                </configuration>
+            </plugin>
+
 		</plugins>
 	</build>
 
